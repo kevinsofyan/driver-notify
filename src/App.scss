@@ -3,6 +3,30 @@
 @import "components/table/table";
 @import "components/notify/notify";
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  box-sizing: border-box;
+
+  &.btn-normal {
+    border: 1px solid $ap-light-gray;
+    color: $ap-black;
+  }
+
+  &.btn-green {
+    background: $ap-green;
+    color: white;
+
+    &:disabled {
+      background: $ap-gray;
+      color: white;
+    }
+  }
+}
+
+/*----*/
 
 .App {
   text-align: center;
@@ -27,6 +51,7 @@
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

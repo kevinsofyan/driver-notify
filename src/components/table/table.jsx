@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Notify from "../notify/notify";
+import TableDriverList from "./TableDriverList";
+import DriversData from "../../drivers"
 
 export default class Table extends Component {
 
@@ -7,24 +8,8 @@ export default class Table extends Component {
         super(props);
 
         this.state = {
-            isModalOpen: false,
-            isInnerModalOpen: false
-        };
-
-        this.closeModal = this.closeModal.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
-
-    closeModal() {
-        this.setState({
-            isModalOpen: false
-        });
-    }
-
-    openModal() {
-        this.setState({
-            isModalOpen: true
-        });
+            drivers: DriversData
+        }
     }
 
     render() {
@@ -35,12 +20,12 @@ export default class Table extends Component {
                     <table cellPadding="0" cellSpacing="0" border="0">
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th className="center">ID</th>
                             <th>Name</th>
                             <th>Phone</th>
                             <th>Email</th>
-                            <th>Suspended</th>
-                            <th>Action</th>
+                            <th className="center">Suspended</th>
+                            <th className="center">Action</th>
                         </tr>
                         </thead>
                     </table>
@@ -48,21 +33,7 @@ export default class Table extends Component {
                 <div className="table-content">
                     <table cellPadding="0" cellSpacing="0" border="0">
                         <tbody>
-                        <tr>
-                            <td>XXD</td>
-                            <td>ADITYA BIRLA</td>
-                            <td>$1.02</td>
-                            <td>-1.01</td>
-                            <td>sd</td>
-                            <td>
-                                <div className="notify-btn">
-                                    <button onClick={this.openModal}>
-                                        Notify
-                                    </button>
-                                </div>
-                                <Notify isModalOpen={this.state.isModalOpen}
-                                        closeModal={this.closeModal}/></td>
-                        </tr>
+                            <TableDriverList data={this.state.drivers}/>
                         </tbody>
                     </table>
                 </div>

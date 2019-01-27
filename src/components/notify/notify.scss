@@ -48,20 +48,9 @@
       margin-top: 20px;
 
       button {
-        background: none;
         padding: 10px 40px;
         margin-left: 15px;
-        border: 1px solid $ap-light-gray;
-        box-sizing: border-box;
-        color: $ap-black;
-        cursor: pointer;
-        border-radius: 3px;
-
-        &.submit {
-          background: $ap-green;
-          border: none;
-          color: white;
-        }
+        width: 150px;
       }
     }
   }

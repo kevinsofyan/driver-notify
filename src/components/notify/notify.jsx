@@ -3,6 +3,26 @@ import React, {Component} from 'react';
 export default class Notify extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            message: ''
+        };
+        this.doOnChange = this.doOnChange.bind(this);
+        this.doSubmit = this.doSubmit.bind(this);
+    }
+
+    doOnChange(event) {
+        this.setState({
+            message: event.target.value
+        })
+    }
+
+    doSubmit(event) {
+        if (this.state.message !== "") {
+            alert(this.state.message);
+            this.state.message = "";
+            this.props.closeModal();
+            event.preventDefault();
+        }
     }
 
     render() {
@@ -10,20 +30,24 @@ export default class Notify extends Component {
             <div className="app-notify"
                  style={{
                      display: this.props.isModalOpen ? "block" : "none"
-                 }}
-            >
+                 }}>
                 <div className="overlay" onClick={this.props.closeModal} />
                 <div onClick={this.props.closeModal} />
                 <div className="content">
                     <h2>Send Message To Driver</h2>
-                    <form>
-                        <textarea placeholder="Message Here"></textarea>
+                    <form onSubmit={this.doSubmit}>
+                        <textarea placeholder="Message Here"
+                                  onChange={this.doOnChange}
+                                  value={this.state.message}></textarea>
                         <div className="button-area">
-                            <button type="button" className="cancel"
+                            <button type="button"
+                                    className="btn-normal"
                                     onClick={this.props.closeModal}>
                                 Cancel
                             </button>
-                            <button type="submit"  className="submit"
+                            <button type="submit"
+                                    className="btn-green"
+                                    disabled={this.state.message === ""}
                                     value="submit">
                                 Submit
                             </button>
