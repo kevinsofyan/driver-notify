@@ -41,12 +41,12 @@ export default class Notify extends Component {
                                   value={this.state.message}></textarea>
                         <div className="button-area">
                             <button type="button"
-                                    className="btn-normal"
+                                    className="btn-normal cancel-btn"
                                     onClick={this.props.closeModal}>
                                 Cancel
                             </button>
                             <button type="submit"
-                                    className="btn-green"
+                                    className="btn-green submit-btn"
                                     disabled={this.state.message === ""}
                                     value="submit">
                                 Submit

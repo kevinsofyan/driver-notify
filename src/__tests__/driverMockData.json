@@ -1,0 +1,18 @@
+{
+  "drivers": [
+    {
+      "id": 0,
+      "name": "Jane Alexander",
+      "phone": "+62 (986) 588-3false65",
+      "email": "janealexander@wrapture.com",
+      "suspended": true
+    },
+    {
+      "id": 1,
+      "name": "Nichole Christian",
+      "phone": "+62 (889) 557-3212",
+      "email": "nicholechristian@wrapture.com",
+      "suspended": false
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export default class Table extends Component {
 
     render() {
         return (
-            <section className="app-table">
+            <div className="app-table">
                 <h1>Notify My Go-Jek Driver</h1>
                 <div className="table-header">
                     <table cellPadding="0" cellSpacing="0" border="0">
@@ -32,12 +32,10 @@ export default class Table extends Component {
                 </div>
                 <div className="table-content">
                     <table cellPadding="0" cellSpacing="0" border="0">
-                        <tbody>
-                            <TableDriverList data={this.state.drivers}/>
-                        </tbody>
+                        <TableDriverList data={this.state.drivers}/>
                     </table>
                 </div>
-            </section>
+            </div>
         );
     }
 }

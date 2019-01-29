@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import Table from './components/table/table';
+import Table from './components/table/Table';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

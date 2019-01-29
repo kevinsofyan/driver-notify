@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import Table from "./components/table/table";
+import Table from "./components/table/Table";
 
 export default class App extends Component {
   render() {
